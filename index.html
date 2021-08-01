@@ -13,51 +13,136 @@
   </head>
   <body>
     <div id="header">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div>
-        <a class="navbar-brand"  href="index.html">Feli-Pet</a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" class="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="productos.html">Productos</a>
-            <a class="nav-link" href="contacto.html">Contacto</a>
-          </div>
-          <div class="logIn">
-            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
-              Log In
-            </button>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="index.html">Feli-Pet</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#seccion1">¿Sobre nosotros?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#seccion2">Formas de pago</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#seccion3">Envios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item logIn">
+              <a class="nav-link" href="login.html">Log In </a>
+            </li>
+          </ul>
         </div>
       </nav>
     </div>
     <div id="container">
       <div class="banner">
       </div>
+    </div>  
+    <div id="seccion1">
+      <div class="contenido">
+        <div class="logo">
+          <img src="media/logo2.jpeg">     
+        </div>
+        <div class="textos">
+          <h1 class="miH1">¿QUIÉNES SOMOS?</h1>
+          <h2 class="miH2">Somos Feli-Pet y una empreda familiar dedicada a la distribucion de productos para mascotas. 
+            Nacimos gracias a la pandemia, en la cual, nos vimos obligados a salir en busqueda
+            de un nuevo sustento para nuestro hogar. Tuvimos que empezar de cero, yendo a visitar 
+            negocio por negocio, no fue facil al principio, pero insistimos y perseveramos hasta llegar 
+            donde estamos hoy, y aun falta un largo camino por recorrer. 
+          </h2>
+          <h2 class="miH2">  
+            Nuestro objetivo es transmitir y difundir el amor que tenemos 
+            por nuestras mascotas a traves de nuestros productos. Ademas, concientizar a la sociedad
+            sore cuestiones que tienen que ver con el cuidado y contencion de los animales, tanto dmesticados
+            como callejeros. Para ello, contamos con el apoyo de nuestros clientes y seguidores. 
+          </h2>
+        </div> 
+      </div>  
     </div>
-
+    <div id="seccion2">
+      <img src="media/pago.jpg">
+      <div class="pagoTexto">
+        <h1 class="miH1">MÉTODOS DE PAGO</h1>
+        <ul class="pago">
+          <li>Efectivo </li>
+          <li>Mercado pago
+            <ul>
+              <li> Generacion de QR</li>
+              <li> Generacion de Link</li>
+              <li> Opción de "Enviar dinero"</li>
+              <li>Transferencia bancaria</li>
+            </ul>
+          </li>
+        </ul>
+        <h2 class="miH2">Podes acceder a nuestro catálogo mediante el siguiente link:
+        </h2>
+        <div class="catalogo">
+          <a href="productos.html">Productos</a>
+          <div class="iconoDescarga">
+          <a class="miBoton" href="media/catalogoFelipet.pdf" title="catalogo" target="_blank"><img src="media/download.png"> Descargar catalogo </a>
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div id="seccion3">
+      <img src="media/map.jpg">
+      <div class="enviosTexto">
+        <h1 class="miH1">ZONAS DE REPARTO</h1>
+        <h2 class="miH2">Hacenos tu pedido y recibilo en la puerta 
+          de tu local. Realizamos reparto por las zonas de:
+        </h2>
+        <ul class="misLugares">
+          <li>General Rodriguez </li>
+          <li>Pilar </li>
+          <li>Escobar </li>
+          <li>Villa Adelina </li>
+          <li>Nuñez </li>
+          <li>Moron </li>
+          <li>Villa Ballester </li>
+        </ul>
+        <h2 class="miH2">Si tu localidad <strong>NO</strong> figura en la lista, te pedimos que te  contactates
+           con nosotros a través del siguiente link
+        </h2>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </div>
     <div id=footer>
       <div class="miFooter">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Metodos de pago</a>
+            <a class="nav-link" href="index.html#seccion1">¿Qiénes somos?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html#seccion2">Métodos de pago</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#seccion3">Envios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="productos.html">Productos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contacto.html">Contacto</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Galeria</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="productos.html" tabindex="-1" aria-disabled="true">Productos</a>
-          </li>
         </ul>
+        <div class="contactoFooter">
+          <p class="emailFooter">Felipet.distribuidora@gmail.com</p>
+          <p class="telefonoFooter"> WSP: +54 1133013309</p>
+        </div>
       </div>
     </div>
-
     <script src="bootstrap/js/jquery-3.5.1.slim.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>

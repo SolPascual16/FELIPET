@@ -1,197 +1,806 @@
 
 #header{
-	position:fixed;
-	top:0px;
-	width: 100%;
-	z-index: 100;
-
+	.navbar{
+		position: fixed;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		z-index: 100;
+		width: 100%;
+	}
+	@media all and (max-width: 769px) {
+		display: flex;
+		flex-direction: column;		
+	}
 	.bg-dark {
-    background-color: $primario!important;
+		background-color: $primario !important;
 	}
-
-	.navbar-nav {
-	    display: -ms-flexbox;
-	    display: flex;
-	    -ms-flex-direction: column;
-	    flex-direction: row;
-	    padding-left: 35%;
-	    margin-bottom: 0;
-	    list-style: none;
-	    	a {
-	    color: $secundario;
-	    text-decoration: none;
-	    font-family: $fuente-dos;
-	    font-size: 25px;
-	    background-color: transparent;
+	.navbar-expand-lg{
+		.navbar-nav {
+			display: flex;
+			flex-direction: row;
+			padding-left: 300px;
+			margin-bottom: 0;
+			list-style: none;
+			@media all and (max-width: 769px) {
+				display: flex;
+				flex-direction: column;
+				padding-left: 10px;
+			}
+				a {
+			color: $secundario;
+			text-decoration: none;
+			font-family: $fuente-tres;
+			font-size: 15px;
+			font-weight: 800;
+			background-color: transparent;
+			margin-left: 20px;
+			
+			}
+				a:hover {
+				color: $primario;
+				text-decoration: none;
+				background-color: $secundario;
+				border-right: solid $secundario 1px;
+				border-radius:7px;
+			}
+		} 
+		.navbar-collapse{
+			.navbar-brand {
+				display: inline-block;
+				padding: 10px;
+				margin-right: 1rem;
+				margin-left: 10px;
+				font-family: $fuente-dos;
+				font-size: 30px;
+				line-height: inherit;
+				white-space: nowrap;
+			} 
+			a {
+				color: $secundario;
+				text-decoration: none;
+			}
+			
 		}
-			a:hover {
-		    color: $terciario;
-		    text-decoration: none;
-		    background-color: transparent;
-		    border-right: solid $secundario 1px;
+		.logIn{
+			padding-left: 300px;
+			@media all and (max-width: 769px) {
+				padding-left: 1px;
+			}
+			a{
+				display: block;
+				color: $secundario;
+				font-size: 20px;
+				font-weight: 800;
+				font-family:$fuente-dos;
+				background-color: $primario;
+				border: 1px solid $primario;
+				border-radius: 25px;
+				min-width: 100px;
+				text-align: center;
+				margin-left: 05px;
+			}
+			@media all and (max-width: 769px) {
+				max-width: 10px;
+			}
+		
+			a:hover{
+				text-decoration: none;
+				background-color: $secundario;
+				border-radius: 7px;
+				color: $primario;
+			}
+		}	
+	}	
+	.navbar-light{ 
+		.navbar-toggler {
+			color: $secundario;
+			padding: .25rem .75rem;
+			font-size: 1.25rem;
+			line-height: 1;
+			background-color: $adicional-1;
+			border: 1px solid $secundario;
+			border-radius: .25rem;
 		}
-	}
-	.navbar-brand {
-    display: inline-block;
-    padding: 5px;
-    margin-right: 1rem;
-    margin-left: 40%;
-    font-family: $fuente-dos;
-    font-size: 30px;
-    line-height: inherit;
-    white-space: nowrap;
-	}
-	.btn-primary{
-		color: $secundario;
-		font-size: 20px;
-		font-family:$fuente-dos;
-	    background-color: $primario;
-	    border-color: $secundario;
-	    border-radius: 05px;
-	    text-align: center;
-	    padding-left: 200;
-	}
-	.btn-primary:hover{
-		background-color: $secundario;
-		border-radius: 05px;
-		color: $primario;
-	}
-	.logIn{
-		padding-left: 450px;
+		.navbar-toggler:focus{ 
+			.navbar-toggler:hover {
+			text-decoration: none;
+			}
+		}
+		.navbar-toggler-icon {
+			display: inline-block;
+			width: 1.5em;
+			height: 1.5em;
+			vertical-align: middle;
+			background-image: url("../media/icon.png");
+			//*background: no-repeat center center;*//
+			background-size: auto;
+			background-size: 100% 100%;
+		}
 	}
 }
 #container{
 	.banner{
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		background-image: url("../media/banner1.jpeg");
 		background-repeat: no-repeat;
 		background-size: 100%;
-		background-color: $primario;
-		padding-bottom: 1050px;
+		padding-bottom: 50em;
+		@media all and (max-width: 769px) {
+			padding-bottom: 30em;
 		}
-}
+		@media all and (max-width: 376px) {
+			padding-bottom: 15em;
+			margin-top: 48px;
+		}
+	}
+}	
+	#seccion1{
+		background-color: $primario;
+		padding-bottom: 150px;
+		padding-top: 150px;
+		@media all and (max-width: 376px) {
+			padding-bottom: 200px;
+		}
+		.contenido{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			margin-left: 50px;
+			@media all and (max-width: 769px) {
+				margin-left: 05px;
+			}
+			.miH1{
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 3rem;
+				text-align:center;
+				@media all and (max-width: 769px) {
+					font-size: 2rem;
+					text-align:center;
+				}
+				@media all and (max-width: 376px) {
+					font-size: 25px;
+					text-align: center;
+				}
+			}
+			.miH2{
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 20px;
+				text-align: left;
+				padding: 10px;
+				margin-left: 10px;
+				@media all and (max-width: 769px) {
+					font-size: 1.5rem;
+					text-align:left;
+				}
+			}
+			img{
+				border: 5px ridge $secundario;
+				border-radius: 30px;
+				@media all and (max-width: 769px) {
+					display: none;
+				}
+			}
+			
+		}	
+	}
+	#seccion2{
+		display: flex;
+		flex-direction: row-reverse;
+		background-color: $adicional-2;
+		.pagoTexto{
+			display: flex;
+			flex-direction: column;
+			padding: 10em;
+			@media all and (max-width: 769px) {
+				font-size: 10px;
+				padding: 05em;
+			}
+			.miH1{
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 3em;
+				text-align:left;
+				@media all and (max-width: 769px) {
+					font-size: 20px;
+					text-align:left;
+					font-weight: 800;
+				}
+				@media all and (max-width: 376px) {
+					font-size: 25px;
+					text-align:left;
+				}
+			}
+			.miH2{
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 1.5em;
+				text-align: left;
+				@media all and (max-width: 769px) {
+					font-size: 15px;
+					text-align:left;
+				}
+				@media all and (max-width: 376px) {
+					font-size: 20px;
+					text-align:left;
+				}
+			}
+			.pago{
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 1.5em;
+				text-align: left;
+				margin-top: .05em;
+				list-style: none;
+				@media all and (max-width: 769px) {
+					font-size: 15px;
+					text-align:left;
+				}
+				@media all and (max-width: 376px) {
+					font-size: 20px;
+					text-align:left;
+				}
+			}
+			.catalogo{
+				a {
+					display: block;
+					color: $secundario;
+					font-family: $fuente-tres;
+					font-size: 25px;
+					text-align: center;
+					text-decoration: none;
+					background-color: $primario;
+					max-width: 250px;
+					border: 1px solid $primario;
+					border-radius: 20px;
+					margin-top: 1em;	
+					margin-left: 3em;
+						@media all and (max-width: 769px) {
+							font-size: 15px;
+							max-width: 250px;
+							margin-left: 1em;	
+						}	
+						@media all and (max-width: 376px) {
+							font-size: 20px;
+							max-width: 250px;
+							margin-left: 1em;
+						}
+				}
+				a:hover {
+					color: $primario;
+					text-decoration: none;
+					background-color: $secundario;
+				}
+				.iconoDescarga{
+					a {
+						background-color: $secundario;
+						color: $primario;
+						font-family: $fuente-tres;
+						font-size: 15px;
+						text-align: center;
+						text-decoration: none;
+						max-width: 250px;
+						border: 1px solid $primario;
+						border-radius: 20px;
+						margin-top: 1em;	
+						margin-left: 5.1em;	
+						@media all and (max-width: 769px) {
+							font-size: 10px;
+							max-width: 250px;
+							margin-left: 1.5em;	
+						}
+						@media all and (max-width: 376px) {
+							font-size: 20px;
+							max-width: 250px;
+							margin-left: 1em;
+						}
+					}
+					img{
+						padding: 05px;
+						max-height: 35px;
+					}
+				}	
+			}		
+		}
+		img{
+			max-width: 50%;
+			@media all and (max-width: 769px) {
+				max-width: 50%;
+			}
+			@media all and (max-width: 376px) {
+				display: none;
+			}
+		}
+	}
+	#seccion3{
+		background-color: $adicional-3;
+		display: flex;
+		flex-direction: row;
+		.enviosTexto{
+			display: flex;
+			flex-direction: column;
+			padding: 10em;
+			@media all and (max-width: 769px) {
+				font-size: 10px;
+				padding: 05em;
+			}
+			.miH1{
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 3em;
+				text-align:left;
+				@media all and (max-width: 769px) {
+					font-size: 15px;
+					text-align:left;
+					font-weight: 800;
+				}
+				@media all and (max-width: 376px) {
+					font-size: 25px;
+					text-align:left;
+				}
+			}
+			.miH2{
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 1.5em;
+				text-align: left;
+				margin-top: .05em;
+				@media all and (max-width: 769px) {
+					font-size: 15px;
+					text-align:left;
+				}
+				@media all and (max-width: 376px) {
+					font-size: 20px;
+					text-align:left;
+				}
+			}
+			.misLugares{
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 1.5em;
+				text-align: left;
+				margin-top: .05em;
+				list-style: none;
+				@media all and (max-width: 769px) {
+					font-size: 15px;
+					text-align:left;
+				}
+				@media all and (max-width: 376px) {
+					font-size: 20px;
+					text-align:left;
+				}
+			}
+			a {
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 25px;
+				text-align: center;
+				text-decoration: none;
+				background-color: $primario;
+				max-width: 250px;
+				border: 1px solid $primario;
+				border-radius: 20px;
+				margin-top: 1em;	
+				margin-left: 6em;	
+					@media all and (max-width: 769px) {
+						font-size: 15px;
+						max-width: 250px;
+						margin-left: 1em;	
+					}	
+					@media all and (max-width: 376px) {
+						font-size: 20px;
+						max-width: 250px;
+						margin-left: 1em;
+					}
+				}
+				a:hover {
+				color: $primario;
+				text-decoration: none;
+				background-color: $secundario;
+				}
+		}	
+
+			img{
+				max-width: 50%;
+				@media all and (max-width: 769px) {
+					max-width: 50%;
+				}
+				@media all and (max-width: 376px) {
+					display: none;
+				}
+			}
+
+	}
 #footer{
 	position: absolute;
 	background-color: $primario;
 	width: 100%;
 	min-height: 90px;
-
+	padding: 50px;
 	.miFooter{
-		margin-left: 600px;
-		padding-top:50px;
-	}
-	.nav {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-	}
-	a {
-	    color: $secundario;
-	    text-decoration: none;
-	    background-color: transparent;
-	}
-		a:hover {
-		    color: $terciario;
-		    text-decoration: none;
-		    background-color: transparent;
+		display: flex;
+		flex-direction: row;
+		.nav {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+			a {
+				color: $secundario;
+				text-decoration: none;
+				font-family: $fuente-tres;
+				font-size: 20px;
+			}
+				a:hover {
+					color: $terciario;
+					text-decoration: none;
+				}
 		}
+		.contactoFooter{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: right;
+			margin-left: 70em;
+			.emailFooter{
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 20px;
+			}
+			.telefonoFooter{
+				margin-top: 0;
+				margin-bottom: 1rem;
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 1.5em;
+			}
+		}
+	}
+	@media all and (max-width: 769px) {
+		display: none;
+	}	
 }
 
 #textos{
 	background-color: $adicional;
 	.text-one{
 		background-color: $primario;
-		div{
 		padding-top: 100px;
 		padding-left: 10px;
 		font-family: $fuente-dos;
 		font-size: 100px;
 		color: $secundario;
+		@media all and (max-width: 769px) {
+			font-size: 70px;
+			padding-top: 60px;
+		}
+		@media all and (max-width: 376px) {
+			font-size: 50px;
+			padding-top: 60px;
 		}
 	}
 	.text-two{
-	background-color: $adicional;
-		div{
+		background-color: $adicional;
 		padding-top:10px;
 		padding-left: 20px;
 		padding-bottom:10px;
-		font-family: $fuente-uno;
+		font-family: $fuente-tres;
 		font-size: 30px;
 		color: $secundario;
+		@media all and (max-width: 769px) {
+			font-size: 20px;
+		}
+		@media all and (max-width: 376px) {
+			font-size: 15px;
 		}
 	}
 }
 #productos{
+	display: flex;
+	flex-direction: row;
 	.menu{
 		background-color: $adicional-2;
-		margin-right: 1330px;
-		display: flex;
-		position: row;
-		.nav-link {
-		    display: block;
+		padding-left: 15px;
+		@media all and (max-width: 769px) {
+			margin-right: 05px;
+			padding-left: 05px;
+		}
+		@media all and (max-width: 376px) {
+			display:none
 		}
 		a {
-		font-family: $fuente-dos;
-		font-size: 25px;
-	    color: $secundario;
-	    text-decoration: none;
-	    background-color: transparent;
+			font-family: $fuente-tres;
+			font-size: 25px;
+			color: $secundario;
+			text-decoration: none;
+			background-color: transparent;
+			@media all and (max-width: 769px) {
+				font-size: 20px;
+	
+			}
 		}
 		a:hover {
-	    color: $terciario;
-	    text-decoration: none;
-	    background-color: transparent;
+			color: $terciario;
+			text-decoration: none;
+			background-color: whitesmoke;
+			;
 		}
-
 	}
 	.catalogo{
 		min-width: 90rem;
 		background-color: $secundario;
-		margin-left: 5rem;
-		font-family: $fuente-dos;
+		font-family: $fuente-tres;
+		margin-left: 40px;
+		@media all and (max-width: 769px) {
+			margin: 10px 10px 10px 10px;
+		}
+
+		@media all and (max-width: 376px) {
+			margin-left: 15px;
+		}
+		.miH1{
+			font-family: $fuente-tres;
+			font-weight: 800px;
+			font-size: 3em;
+			@media all and (max-width: 769px) {
+				font-size: 35px;
+			}
+			@media all and (max-width: 376px) {
+				font-size: 30px;
+			}
+		}
+		.miH2{
+			font-family: $fuente-tres;
+			font-size: 2em;
+			@media all and (max-width: 769px) {
+				font-size: 25px;
+			}
+			@media all and (max-width: 376px) {
+				font-size: 20px;
+			}
+		}
 		.card-title {
 		    margin-bottom: .75rem;
-		    font-size: 25px;
+		    font-size: 15px;
+			@media all and (max-width: 769px) {
+				font-size: 15px;
+			}
 		}
-		a {
-		font-family: $fuente-dos;
-		font-size: 25px;
-	    color: $secundario;
-	    text-decoration: none;
-	    background-color: $primario;
+		.row {
+			display: flex;
+			flex-direction: row;
+			margin-right: .05em;
+			margin-left:  .05em;
+			@media all and (max-width: 376px) {
+				flex-direction: column;
+				margin-right: .05em;
+				margin-left:  .05em;
+			}
 		}
-		a:hover {
-		    color: $secundario;
-		    text-decoration: none;
-		    background-color: $adicional;
+		.col {
+			flex-basis: 0;
+			flex-grow: 1;
+			position: relative;
+			width: 100%;
+			max-width: 25%;
+			padding-right: 15px;
+			padding-left: 15px;
+			@media all and (max-width: 769px) {
+				max-width: 15%;
+			}
+			@media all and (max-width: 376px) {
+				max-width: 28%;
+			}
+		}
+		.card {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			min-width: 0;
+			word-wrap: break-word;
+			background-color: $secundario;
+			background-clip: border-box;
+			border: 1px solid $adicional;
+			border-radius: .25rem;
+		}
+
+	}
+}
+#contacto{
+	background-color: $adicional-2;
+	.form{	
+		padding: 10%;
+		padding-left: 20%;
+		padding-top: 100px;
+		@media all and (max-width: 769px) {
+			padding: 10%;
+			padding-top: 50px;
+			padding-left: 05%;
+			padding-bottom: 800px;;
+		}
+		@media all and (max-width: 376px) {
+			padding: 10%;
+			padding-top: 05px;
+			padding-left: 15px;
+			padding-bottom: 700px;
+		}
+		
+		.titulo{
+			color: $secundario;
+			font-family: $fuente-dos;
+			font-size: 5em;
+			@media all and (max-width: 769px) {
+				margin-top: 40px;
+				font-size: 3em;
+			}
+			@media all and (max-width: 376px) {
+				margin-top: 60px;
+				font-size: 40px;
+			}
+		}
+		.consulta{
+			.datosPersonales{
+				display: flex;
+				flex-direction: row;
+				@media all and (max-width: 376px) {
+					display: flex;
+					flex-direction: column;
+				}	
+			}		
+			.formulario{
+				display: flex;
+				flex-direction: column;
+				padding-right: 15px;
+				margin-top: 30px;
+				@media all and (max-width: 769px) {
+					margin-top: 20px;
+				}
+				@media all and (max-width: 376px) {
+					margin-top: 20px;
+				}
+				.label{
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 3rem;
+				}
+				.estilos{
+					width: 25rem;
+					font-size: 20px;
+					border-radius:.25rem;
+					border: 1px solid $primario;
+					@media all and (max-width: 769px) {
+						margin-top: 10px;
+						font-size: 20px;
+						width: 16rem;
+					}
+					@media all and (max-width: 376px) {
+						margin-top: 10px;
+						font-size: 20px;
+						width: 25rem;
+					}
+				}
+				.estilosEmail{
+					width: 77rem;
+					font-size: 20px;
+					@media all and (max-width: 769px) {
+						margin-top: 10px;
+						font-size: 20px;
+						width: 50rem;
+					}
+					@media all and (max-width: 376px) {
+						margin-top: 10px;
+						width: 25rem;
+						font-size: 20px;
+					}
+				}
+				.estilosTA{
+					width: 77rem;
+					font-size: 20px;
+					@media all and (max-width: 769px) {
+						margin-top: 10px;
+						font-size: 20px;
+						width: 50rem;
+					}
+					@media all and (max-width: 376px) {
+						margin-top: 10px;
+						width: 25rem;
+						font-size: 20px;
+					}
+				}
+				
+			}
+			.botones{
+				padding-top: 2rem;
+				input{
+					color: $secundario;
+					font-size: 25px;
+					font-family:$fuente-dos;
+					font-weight: 650;
+				    background-color: $adicional;
+				    border:1px solid $adicional;
+				    border-radius: 25px;
+					min-width: 250px;
+				    text-align: center;	
+				    text-decoration: none;
+				    padding: 10px;
+					@media all and (max-width: 769px) {
+						min-width: 28em;
+					}
+					@media all and (max-width: 376px) {
+						font-size: 20px;
+						min-width: 350px;
+					}
+				}
+				input:hover{
+				    color: $primario;
+					background-color: $secundario;
+					border-radius: 25px;			
+				}
+				
+			}	
 		}
 	}
 }
 
-#contacto{
-	background-color: $adicional-2;
-	.banner{
-		background-color: $adicional;
-		padding-top:90px;
-		padding-left: 40px;
-		padding-bottom: 30px;
-		font-family: "Open Sans Condensed", sans-serif;
-		font-size: 50px;
-		color: $primario;
-	}
-	form {
-		.textoForm{
-		color:$secundario;
-		font-size: 20px;
+#formLogIn {
+	background-color: $adicional;
+	.formLogIn2 {
+		padding: 15%;
+		padding-left: 600px;
+
+		@media all and (max-width: 769px) {
+			padding: 20%;
+			padding-left: 225px;
+			padding-bottom: 800px;
 		}
+		@media all and (max-width: 376px) {
+			padding: 40%;
+			padding-left: 15px;
+			padding-bottom: 800px;
+		}
+		.form-group {
+			display: flex;
+			flex-direction: column;
+			.miCol{
+				max-width: 83.333333%;
+			}
+			.estilosLogIn {
+				margin-top: 10px;
+				width: 25rem;
+				font-size: 20px;
+				border-radius:.25rem;
+				border: 1px solid $primario;
+			}
+		}
+
 	}
-}
+	.botones{
+		margin: 50px;
+		input{
+			color: $secundario;
+			font-size: 25px;
+			font-family:$fuente-dos;
+			font-weight: 650;
+			background-color: $adicional-2;
+			border:1px solid $adicional-2;
+			border-radius: 25px;
+			min-width: 250px;
+			text-align: center;	
+			text-decoration: none;
+			}
+		input:hover{
+			color: $primario;
+			background-color: $secundario;
+			border-radius: 25px;				}
+		
+	}	
+}	
+
 
 
 

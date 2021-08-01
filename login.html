@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     
-  <title>Tu consulta en Feli-Pet</title>
+  <title>FeliPet- Log In </title>
   </head>
   <body>
     <div id="header">
@@ -38,39 +38,24 @@
               <a class="nav-link" href="contacto.html">Contacto</a>
             </li>
             <li class="nav-item logIn">
-              <a class="nav-link" href="login.html">Log In </a>
+              <a class="nav-link" href="index.html">Log Out </a>
             </li>
           </ul>
         </div>
-      </nav>    </div>
-    <div id="contacto">
-      <div class="form">
-        <h1 class="titulo">Contacto</h1>
-        <form action="recibe.html" method="POST" enctype="multipart/form-data">
-          <div class="consulta">
-            <div class="datosPersonales">
-              <div class="formulario">
-                <input class="estilos" type="text" name="Nombre" placeholder="Ingresá tu Nombre">
-              </div>
-              <div class="formulario">
-                <input class="estilos" type="text" name="Apellido" placeholder="Ingresá tu Apellido">
-              </div>
-              <div class="formulario">
-                <input class="estilos" type="text" name="Telefono" placeholder="Numero de telefono">
-              </div>
+      </nav>
+    </div>
+    <div id="formLogIn">
+        <form class="formLogIn2">
+            <div class="form-group">
+              <div class="miCol">
+                <input type="email" class="estilosLogIn" id="colFormLabel" placeholder="dominio@ejemplo.com">
+              </div>  
+                <input type="password" id="input" class="estilosLogIn" aria-describedby="passwordHelpInline" placeholder="Ingresá tu contraseña">
+              <div class="botones">
+                  <input type="submit" name="submit" value="Ingresar">
+              </div> 
             </div>
-            <div class="formulario">
-              <input class="estilosEmail" type="text" name="Email" placeholder=" Direccion@ejemplo.com">
-            </div>
-            <div class="formulario">
-                <textarea class="estilosTA" cols="3" rows="5" placeholder="Ingresá tu pedido/consulta"></textarea>
-            </div>
-            <div class="botones">
-              <input type="submit" name="submit" value="Enviar consulta">
-            </div>
-          </div> 
-        </form>
-      </div>    
+          </form> 
     </div>
     <div id=footer>
       <div class="miFooter">
