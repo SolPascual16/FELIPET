@@ -104,28 +104,33 @@
 }
 
 #textos{
+	background-color: $adicional;
 	.text-one{
-		background-color: $adicional;
-		padding-top:90px;
-		padding-left: 40px;
-		font-family: $fuente-uno;
-		font-size: 30px;
-		color: $primario;
-	}
-	.text-two{
 		background-color: $primario;
 		div{
-			padding-left: 30px;
-			font-family: $fuente-dos;
-			font-size: 100px;
-			color: $secundario;
+		padding-top: 100px;
+		padding-left: 10px;
+		font-family: $fuente-dos;
+		font-size: 100px;
+		color: $secundario;
+		}
+	}
+	.text-two{
+	background-color: $adicional;
+		div{
+		padding-top:10px;
+		padding-left: 20px;
+		padding-bottom:10px;
+		font-family: $fuente-uno;
+		font-size: 30px;
+		color: $secundario;
 		}
 	}
 }
 #productos{
 	.menu{
-		margin-top:10px;
-		margin-right: 50px;
+		background-color: $adicional-2;
+		margin-right: 1330px;
 		display: flex;
 		position: row;
 		.nav-link {
@@ -134,18 +139,21 @@
 		a {
 		font-family: $fuente-dos;
 		font-size: 25px;
-	    color: $primario;
+	    color: $secundario;
 	    text-decoration: none;
 	    background-color: transparent;
 		}
 		a:hover {
-		    color: $terciario;
-		    text-decoration: none;
-		    background-color: transparent;
+	    color: $terciario;
+	    text-decoration: none;
+	    background-color: transparent;
 		}
+
 	}
 	.catalogo{
-		margin-left: 30px;
+		min-width: 90rem;
+		background-color: $secundario;
+		margin-left: 5rem;
 		font-family: $fuente-dos;
 		.card-title {
 		    margin-bottom: .75rem;
@@ -167,11 +175,22 @@
 }
 
 #contacto{
-	p {
-    margin-top: 100px;
-    margin-bottom: 1rem;
+	background-color: $adicional-2;
+	.banner{
+		background-color: $adicional;
+		padding-top:90px;
+		padding-left: 40px;
+		padding-bottom: 30px;
+		font-family: "Open Sans Condensed", sans-serif;
+		font-size: 50px;
+		color: $primario;
 	}
-
+	form {
+		.textoForm{
+		color:$secundario;
+		font-size: 20px;
+		}
+	}
 }
 
 
