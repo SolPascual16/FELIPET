@@ -128,7 +128,7 @@
 		background-image: url("../media/banner1.jpeg");
 		background-repeat: no-repeat;
 		background-size: 100%;
-		padding-bottom: 50em;
+		padding-bottom: 55em;
 		@media all and (max-width: 769px) {
 			padding-bottom: 30em;
 		}
@@ -502,113 +502,86 @@
 #productos{
 	display: flex;
 	flex-direction: row;
-	.menu{
+
+	.presupuesto{
+		display: flex;
+		flex-direction: column;
 		background-color: $adicional-2;
-		padding-left: 15px;
-		@media all and (max-width: 769px) {
-			margin-right: 05px;
-			padding-left: 05px;
-		}
-		@media all and (max-width: 376px) {
-			display:none
-		}
-		a {
-			font-family: $fuente-tres;
-			font-size: 25px;
+		padding-left: 70px;
+		padding-right: 70px;
+		padding-top: 20px;
+		padding-bottom: 30px;
+		h1{
+			margin: 30px;
+
 			color: $secundario;
-			text-decoration: none;
-			background-color: transparent;
-			@media all and (max-width: 769px) {
+			font-family: $fuente-tres;
+			text-align: center;
+		}
+		.listado-favoritos{
+			h2{
+				margin-top: 10px;
+				color: $secundario;
+				font-family: $fuente-tres;
 				font-size: 20px;
-	
+				text-align: left;
 			}
 		}
-		a:hover {
-			color: $terciario;
-			text-decoration: none;
-			background-color: whitesmoke;
-			;
-		}
 	}
-	.catalogo{
-		min-width: 90rem;
+	.contenedor-productos{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		min-width: 80rem;
 		background-color: $secundario;
 		font-family: $fuente-tres;
-		margin-left: 40px;
-		@media all and (max-width: 769px) {
-			margin: 10px 10px 10px 10px;
-		}
-
-		@media all and (max-width: 376px) {
-			margin-left: 15px;
-		}
-		.miH1{
-			font-family: $fuente-tres;
-			font-weight: 800px;
-			font-size: 3em;
-			@media all and (max-width: 769px) {
-				font-size: 35px;
-			}
-			@media all and (max-width: 376px) {
-				font-size: 30px;
-			}
-		}
-		.miH2{
-			font-family: $fuente-tres;
-			font-size: 2em;
-			@media all and (max-width: 769px) {
-				font-size: 25px;
-			}
-			@media all and (max-width: 376px) {
-				font-size: 20px;
-			}
-		}
-		.card-title {
-		    margin-bottom: .75rem;
-		    font-size: 15px;
-			@media all and (max-width: 769px) {
-				font-size: 15px;
-			}
-		}
-		.row {
-			display: flex;
-			flex-direction: row;
-			margin-right: .05em;
-			margin-left:  .05em;
-			@media all and (max-width: 376px) {
-				flex-direction: column;
-				margin-right: .05em;
-				margin-left:  .05em;
-			}
-		}
-		.col {
-			flex-basis: 0;
-			flex-grow: 1;
-			position: relative;
-			width: 100%;
-			max-width: 25%;
-			padding-right: 15px;
-			padding-left: 15px;
-			@media all and (max-width: 769px) {
-				max-width: 15%;
-			}
-			@media all and (max-width: 376px) {
-				max-width: 28%;
-			}
-		}
-		.card {
-			position: relative;
-			display: flex;
-			flex-direction: column;
-			min-width: 0;
-			word-wrap: break-word;
-			background-color: $secundario;
-			background-clip: border-box;
-			border: 1px solid $adicional;
-			border-radius: .25rem;
-		}
+		margin-left: 30px;
 
 	}
+	.card{
+		max-width: 500px;
+		margin-top: 20px; 
+		margin-bottom: 20px;
+		padding-top: 20px;
+		border: 1px solid $primario ;
+
+	}
+	.imagen-producto{
+	 	width: 400px;
+		margin-left: 50px;
+		padding: 1rem;
+
+	}
+	.titulo-productos{
+		text-align: center;
+		font-family: $fuente-tres;
+		font-size: 2rem;
+	}
+	.precio-productos{
+		text-align: center;
+		font-family: $fuente-tres;
+		font-size: 2rem;
+	}
+	.btn-favorito{
+		max-width: 150px;
+		margin-top: 1rem;
+		margin-left: 35%;
+		margin-bottom: 1rem;
+		padding: 15px;
+		cursor: pointer;
+		border: 1px solid $primario;
+		border-radius: 10px;
+		background-color: $primario;
+		font-family: $fuente-tres;
+		font-size: 20px;
+		color: $secundario;
+	}
+	.btn-favorito:hover{
+		background-color: $terciario;
+		border: 1px solid $primario;
+
+	}
+
+
 }
 #contacto{
 	background-color: $adicional-2;

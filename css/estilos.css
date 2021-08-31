@@ -112,7 +112,7 @@
   background-image: url("../media/banner1.jpeg");
   background-repeat: no-repeat;
   background-size: 100%;
-  padding-bottom: 50em; }
+  padding-bottom: 55em; }
   @media all and (max-width: 769px) {
     #container .banner {
       padding-bottom: 30em; } }
@@ -448,99 +448,66 @@
 #productos {
   display: flex;
   flex-direction: row; }
-  #productos .menu {
+  #productos .presupuesto {
+    display: flex;
+    flex-direction: column;
     background-color: #212529;
-    padding-left: 15px; }
-    @media all and (max-width: 769px) {
-      #productos .menu {
-        margin-right: 05px;
-        padding-left: 05px; } }
-    @media all and (max-width: 376px) {
-      #productos .menu {
-        display: none; } }
-    #productos .menu a {
-      font-family: "Roboto", sans-serif;
-      font-size: 25px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 30px; }
+    #productos .presupuesto h1 {
+      margin: 30px;
       color: #fbfbfbcc;
-      text-decoration: none;
-      background-color: transparent; }
-      @media all and (max-width: 769px) {
-        #productos .menu a {
-          font-size: 20px; } }
-    #productos .menu a:hover {
-      color: #622f7e;
-      text-decoration: none;
-      background-color: whitesmoke; }
-  #productos .catalogo {
-    min-width: 90rem;
+      font-family: "Roboto", sans-serif;
+      text-align: center; }
+    #productos .presupuesto .listado-favoritos h2 {
+      margin-top: 10px;
+      color: #fbfbfbcc;
+      font-family: "Roboto", sans-serif;
+      font-size: 20px;
+      text-align: left; }
+  #productos .contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 80rem;
     background-color: #fbfbfbcc;
     font-family: "Roboto", sans-serif;
-    margin-left: 40px; }
-    @media all and (max-width: 769px) {
-      #productos .catalogo {
-        margin: 10px 10px 10px 10px; } }
-    @media all and (max-width: 376px) {
-      #productos .catalogo {
-        margin-left: 15px; } }
-    #productos .catalogo .miH1 {
-      font-family: "Roboto", sans-serif;
-      font-weight: 800px;
-      font-size: 3em; }
-      @media all and (max-width: 769px) {
-        #productos .catalogo .miH1 {
-          font-size: 35px; } }
-      @media all and (max-width: 376px) {
-        #productos .catalogo .miH1 {
-          font-size: 30px; } }
-    #productos .catalogo .miH2 {
-      font-family: "Roboto", sans-serif;
-      font-size: 2em; }
-      @media all and (max-width: 769px) {
-        #productos .catalogo .miH2 {
-          font-size: 25px; } }
-      @media all and (max-width: 376px) {
-        #productos .catalogo .miH2 {
-          font-size: 20px; } }
-    #productos .catalogo .card-title {
-      margin-bottom: .75rem;
-      font-size: 15px; }
-      @media all and (max-width: 769px) {
-        #productos .catalogo .card-title {
-          font-size: 15px; } }
-    #productos .catalogo .row {
-      display: flex;
-      flex-direction: row;
-      margin-right: .05em;
-      margin-left: .05em; }
-      @media all and (max-width: 376px) {
-        #productos .catalogo .row {
-          flex-direction: column;
-          margin-right: .05em;
-          margin-left: .05em; } }
-    #productos .catalogo .col {
-      flex-basis: 0;
-      flex-grow: 1;
-      position: relative;
-      width: 100%;
-      max-width: 25%;
-      padding-right: 15px;
-      padding-left: 15px; }
-      @media all and (max-width: 769px) {
-        #productos .catalogo .col {
-          max-width: 15%; } }
-      @media all and (max-width: 376px) {
-        #productos .catalogo .col {
-          max-width: 28%; } }
-    #productos .catalogo .card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      word-wrap: break-word;
-      background-color: #fbfbfbcc;
-      background-clip: border-box;
-      border: 1px solid #4f575e;
-      border-radius: .25rem; }
+    margin-left: 30px; }
+  #productos .card {
+    max-width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    border: 1px solid #000; }
+  #productos .imagen-producto {
+    width: 400px;
+    margin-left: 50px;
+    padding: 1rem; }
+  #productos .titulo-productos {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem; }
+  #productos .precio-productos {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem; }
+  #productos .btn-favorito {
+    max-width: 150px;
+    margin-top: 1rem;
+    margin-left: 35%;
+    margin-bottom: 1rem;
+    padding: 15px;
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #000;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    color: #fbfbfbcc; }
+  #productos .btn-favorito:hover {
+    background-color: #622f7e;
+    border: 1px solid #000; }
 
 #contacto {
   background-color: #212529; }
