@@ -504,6 +504,7 @@
 	display: flex;
 	flex-direction: row;
 
+<<<<<<< HEAD
 	.estilosCarrito{
 		background-color: $adicional-2;
 		min-width: 150px;
@@ -564,6 +565,67 @@
 		color: $primario;
 	}	
 	.botonAgregar{
+=======
+	.presupuesto{
+		display: flex;
+		flex-direction: column;
+		background-color: $adicional-2;
+		padding-left: 70px;
+		padding-right: 70px;
+		padding-top: 20px;
+		padding-bottom: 30px;
+		h1{
+			margin: 30px;
+
+			color: $secundario;
+			font-family: $fuente-tres;
+			text-align: center;
+		}
+		.listado-favoritos{
+			h2{
+				margin-top: 10px;
+				color: $secundario;
+				font-family: $fuente-tres;
+				font-size: 20px;
+				text-align: left;
+			}
+		}
+	}
+	.contenedor-productos{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		min-width: 80rem;
+		background-color: $secundario;
+		font-family: $fuente-tres;
+		margin-left: 30px;
+
+	}
+	.card{
+		max-width: 500px;
+		margin-top: 20px; 
+		margin-bottom: 20px;
+		padding-top: 20px;
+		border: 1px solid $primario ;
+
+	}
+	.imagen-producto{
+	 	width: 400px;
+		margin-left: 50px;
+		padding: 1rem;
+
+	}
+	.titulo-productos{
+		text-align: center;
+		font-family: $fuente-tres;
+		font-size: 2rem;
+	}
+	.precio-productos{
+		text-align: center;
+		font-family: $fuente-tres;
+		font-size: 2rem;
+	}
+	.btn-favorito{
+>>>>>>> 59e55bcf65e141fea8993df93dfe5b3938b0a52c
 		max-width: 150px;
 		margin-top: 1rem;
 		margin-left: 35%;
@@ -577,11 +639,17 @@
 		font-size: 20px;
 		color: $secundario;
 	}
+<<<<<<< HEAD
 	.botonAgregar:hover{
+=======
+	.btn-favorito:hover{
+>>>>>>> 59e55bcf65e141fea8993df93dfe5b3938b0a52c
 		background-color: $terciario;
 		border: 1px solid $primario;
 
 	}
+
+
 }
 #contacto{
 	background-color: $adicional-2;
