@@ -6,106 +6,258 @@
     <meta name="description" content="Venta mayorista collares, correas, juguetes y accesorios para tu mascota">
     <meta name="keywords"content="colchones antidesgarro, colchon lona, bolso de lona, bolso de lona antidesgarro, moises economico, muises lunares, caja transportadora para gato, hamstera economica grande, hamstera economica chica, hueso, orejas, bandeja sanitaria, varilla juguete gato, bolsa para gato, rascador, sacapelo, comedero, bebedero, collar, correa, pretal, cadena para perro, osspret, hectopar, total full, antiparacitario, pipeta para pulgas, mascotas">
     
+    <!-- MI CSS -->
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    <!-- SM BUTTONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
   <title>Catálogo Accesorios para mascotas Feli-pet</title>
   </head>
   <body>
-    <div id="header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="index.html">Feli-Pet</a>
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+    <header>
+        <div id="header">
+            <nav class="header navbar-expand-lg navbar-light bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="index.html">Feli-Pet</a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="index.html#seccion1">¿Sobre nosotros?</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="productos.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="index.html#seccion2">Formas de pago</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="index.html#seccion3">Envios</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+            </ul>
+            <div class="navbar-nav">
+                <div class="d-flex justify-content-right mt-3">
+                    <a type="button" data-toggle="modal" data-target="#cartModal">
+                        <img class="img-fluid cartImg" src="../media/cart.png" alt="cart"></i>
+                    </a>   
+                    <div id="cartNumbers"> 
+                        <span class="fw-bold text-white" id="cart-counter">0</span> <!--JS / Cart Counter-->
+                    </div>
+                </div>
+            </div>
+            </div>
+        </nav>
+        </div>
+        
+        <!-- Modal -->
+        <section id="container">
+            <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modalTitulo modal-header border-bottom-0">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                                Tu carrito de compras
+                            </h5>
+                            <button type="button" class="close btn btn-outline-danger" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row modal-header text-center">
+                                <div class="col-3">
+                                    <h6>Producto</h6>
+                                </div>
+                                <div class="col-3">
+                                    <h6>Precio</h6>
+                                </div>
+                                <div class="col-3">
+                                    <h6>Cantidad</h6>
+                                </div>
+                                <div class="col-3">
+                                    <h6>Eliminar</h6>
+                                </div>
+                            </div> 
+                            <div class="show-cart">  <!-- JS / Show cart Modal-->  
+                            </div>
+                              
+                            <div class="d-flex justify-content-end">
+                                <h5 class="precioTotal">Total: <span class="text-success total-price">0</span> </h5> <!-- JS / Total price-->
+                            </div>   
+                        </div>
+                        <div class="modal-footer border-top-0 d-flex justify-content-between">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-danger btn-vaciar-carrito">Vaciar carrito</button> <!-- JS / Vaciar carrito -->
+                            <button type="button" class="btn btn-success btn-finalizar-compra" data-toggle="modal" data-target="#comprarModal"> <!-- JS / Finalizar compra -->
+                                Finalizar compra
+                            </button> 
+                            <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel" aria-hidden="true"> <!-- Modal Finalizar compra -->
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="comprarModalLabel">¡Gracias por su compra!</h5>
+                                            <button type="button" class="close btn btn-outline-danger" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Pronto recibirá su pedido</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>    
+    </header>
+
+        <!-- Productos -->
+        <div id="textos" >
+            <h2 class="text-one">Ventas Mayoristas</h2>
+        </div>
+        <div class="text-two col-lg-12 text-center text-lg-center mt-lg-0 mb-5">
+            <h2 class="textoPrincipal fw-bold mb-4 mt-5">Tienda Online 
+                <span class="feliPet">Feli-Pet</span>
+            </h2>
+            <img class="logo" src="../media/logo.jpg">
+        </div>
+        <section class="store" id="fondoHome">
+            <div class="container">
+                <div class="products"> <!-- JS / Products -->
+                    <div class="productos row"> 
+                        <div>
+                            <div class="product card shadow card-body text-center mt-3 mb-4">
+                                <img class="product-img img-fluid imagenesProducto p-2" src="../media/bebederos1.jpeg" alt="Bebederos"> <!--JS / Pruducts img-->
+                                <h4 class="text-secondary text-center mb-2 product-title">Bebederos</h4> <!--JS / Products title-->
+                                <div>
+                                    <p class="mb-1 product-price">$500</p> <!--JS / Item price-->
+                                    <button class="btn btn-outline-success add-to-cart-btn"> <!--JS / Add to cart btn-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/></svg> 
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product card shadow card-body text-center mt-3 mb-4">
+                                <img class="product-img img-fluid imagenesProducto p-2" src="../media/pelotas1.jpeg" alt="Pelotas"> <!--JS / products img-->
+                                <h4 class="text-secondary text-center mb-2 product-title">Pelotas</h4> <!--JS / Prducts title-->
+                                <div>
+                                    <p class="mb-1 product-price">$250</p> <!--JS / Item price-->
+                                    <button class="btn btn-outline-success add-to-cart-btn"> <!--JS / Add to cart btn-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/></svg> 
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product card shadow card-body text-center mt-3 mb-4">
+                                <img class="product-img img-fluid imagenesProducto p-2" src="../media/ratita1.jpeg" alt="Ratitas"> <!--JS / Products img-->
+                                <h4 class="text-secondary text-center mb-2 product-title">Ratitas</h4> <!--JS / Products title-->
+                                <div>
+                                    <p class="mb-1 product-price">$300</p> <!--JS / Item price-->
+                                    <button class="btn btn-outline-success add-to-cart-btn"> <!--JS / Add to cart btn-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/></svg> 
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product card shadow card-body text-center mt-3 mb-4">
+                                <img class="product-img img-fluid imagenesProducto p-2" src="../media/peines1.jpeg" alt="Peines"> <!--JS / Products img-->
+                                <h4 class="text-secondary text-center mb-2 product-title">Peines</h4> <!--JS / Products title-->
+                                <div>
+                                    <p class="mb-1 product-price">$600</p> <!--JS / Item price-->
+                                    <button class="btn btn-outline-success add-to-cart-btn"> <!--JS / Add to cart btn-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/></svg> 
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+                        <div>
+                            <div class="product card shadow card-body text-center mt-3 mb-4">
+                                <img class="product-img img-fluid imagenesProducto p-2" src="../media/shampoo1.jpeg" alt="Shampoo"> <!--JS / Products img-->
+                                <h4 class="text-secondary text-center mb-2 product-title">Shampoo</h4> <!--JS / Products title-->
+                                <div>
+                                    <p class="mb-1 product-price">$800</p> <!--JS / Item price-->
+                                    <button class="btn btn-outline-success add-to-cart-btn"> <!--JS / Add to cart btn-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/></svg> 
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="product card shadow card-body text-center mt-3 mb-4">
+                                <img class="product-img img-fluid imagenesProducto p-2" src="../media/sogas1.jpeg" alt="Sogas"> <!--JS / Products img-->
+                                <h4 class="text-secondary text-center mb-2 product-title">Sogas</h4> <!--JS / Products title-->
+                                <div>
+                                    <p class="mb-1 product-price">$400</p> <!--JS / Item price-->
+                                    <button class="btn btn-outline-success add-to-cart-btn"> <!--JS / Add to cart btn-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16"><path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/></svg> 
+                                        Agregar al carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </section>
+    </main>
+
+    <div id=footer>
+        <div class="miFooter">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#seccion1">¿Qiénes somos?</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#seccion1">¿Sobre nosotros?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="productos.html">Productos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#seccion2">Formas de pago</a>
+              <a class="nav-link active" href="index.html#seccion2">Métodos de pago</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html#seccion3">Envios</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="productos.html">Productos</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="contacto.html">Contacto</a>
             </li>
-            <li class="nav-item logIn">
-              <a class="nav-link" href="login.html">Log In </a>
-            </li>
           </ul>
+          <div class="contactoFooter">
+            <p class="emailFooter">Felipet.distribuidora@gmail.com</p>
+            <p class="telefonoFooter"> WSP: +54 1133013309</p>
+          </div>
         </div>
-      </nav>
-    </div>
-    <div id="textos">
-      <div class="text-one">
-        CATÁLOGO
-      </div>
-      <div class="text-two">
-        VENTAS MAYORISTAS
-      </div>
-    </div>
-<<<<<<< HEAD
-    <div id="container">
-          <aside class="estilosCarrito col-sm-4">
-              <h1>CARRITO</h1>
-              <ul id="carrito" class="list-group"></ul>
-              <hr>
-              <h1  class="text-right">TOTAL:<span id="total"></span>&#36;</h1>
-              <button id="boton-vaciar" class="miBtn estilosBoton">Vaciar</button>
-          </aside>
-          <main id="items" class="col-sm-8 row"></main>
-=======
-    <div id="productos">
-      <div class="presupuesto">
-        <h1>Presupuesto</h1>
-        <div class="listado-favoritos">
-        </div>  
-        <div class="total-compra">
-          <h1>TOTAL:</h1>
-        </div>
-      </div>
-        <div  class="contenedor-productos">
+      </div> 
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- MI JS -->
+         <script src="../js/main.js"></script>       
+</body>
 
-        </div>
->>>>>>> 59e55bcf65e141fea8993df93dfe5b3938b0a52c
-    </div>
-    <div id=footer>
-      <div class="miFooter">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#seccion1">¿Qiénes somos?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html#seccion2">Métodos de pago</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#seccion3">Envios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="productos.html">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contacto.html">Contacto</a>
-          </li>
-        </ul>
-        <div class="contactoFooter">
-          <p class="emailFooter">Felipet.distribuidora@gmail.com</p>
-          <p class="telefonoFooter"> WSP: +54 1133013309</p>
-        </div>
-      </div>
-    </div>
-    <script src="bootstrap/js/jquery-3.5.1.slim.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
-
-  </body>
 </html>

@@ -4,11 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords"content="felipet, contacto felipet, distribuidora mayorista, villa ballester, accesorios, mascotas, petshop, productos, originales">
-
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    
-  <title>Tu consulta en Feli-Pet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  <title>Tu consulta en Feli-Pet</title>
   </head>
   <body>
     <div id="header">
@@ -20,7 +17,7 @@
           <a class="navbar-brand" href="index.html">Feli-Pet</a>
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html#seccion1">¿Sobre nosotros?</a>
@@ -42,35 +39,24 @@
             </li>
           </ul>
         </div>
-      </nav>    </div>
+      </nav>    
+    </div>
     <div id="contacto">
-      <div class="form">
-        <h1 class="titulo">Contacto</h1>
-        <form action="recibe.html" method="POST" enctype="multipart/form-data">
-          <div class="consulta">
-            <div class="datosPersonales">
-              <div class="formulario">
-                <input class="estilos" type="text" name="Nombre" placeholder="Ingresá tu Nombre">
-              </div>
-              <div class="formulario">
-                <input class="estilos" type="text" name="Apellido" placeholder="Ingresá tu Apellido">
-              </div>
-              <div class="formulario">
-                <input class="estilos" type="text" name="Telefono" placeholder="Numero de telefono">
-              </div>
-            </div>
-            <div class="formulario">
-              <input class="estilosEmail" type="text" name="Email" placeholder=" Direccion@ejemplo.com">
-            </div>
-            <div class="formulario">
-                <textarea class="estilosTA" cols="3" rows="5" placeholder="Ingresá tu pedido/consulta"></textarea>
-            </div>
-            <div class="botones">
-              <input type="submit" name="submit" value="Enviar consulta">
-            </div>
-          </div> 
-        </form>
-      </div>    
+      <form  class="contact-form">
+        <legend>Contacto</legend>
+        <input type="text" name="name" placeholder="Escribe tu nombre y apellido" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="Nombre solo acepta letras y espacios en blanco" required>
+        <input type="text" name="TEL" placeholder="TEL/cel" title="TEL/cel solo acepta letras y espacios en blanco" required>
+        <input type="email" name="email" placeholder="email@ejemplo.com" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" title="El mail ingresado es incorrecto" required>
+        <input type="text" name="subject" placeholder="Ingresa un asunto" title="El asunto es requerido" required >
+        <textarea name="coments" cols="50" rows="5" placeholder="Escribe tu consulta" data-pattern="^.{1,255}$" title="Tu comentario no debe exceder los 250 caracteres" required></textarea>
+        <input type="submit" value="Enviar">
+        <div class="contact-form-loader none">
+            <img src="media/rings.svg" alt="cargando">
+        </div>
+        <div class="contact-form-response none">
+            <h1>Los datos han sido enviados</h1>
+        </div>
+      </form>
     </div>
     <div id=footer>
       <div class="miFooter">
@@ -97,7 +83,72 @@
         </div>
       </div>
     </div>
-    <script src="bootstrap/js/jquery-3.5.1.slim.min.js"></script>
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>    <script>
+      const d = document 
+      d.addEventListener("DOMContentLoaded",(e) =>{
+          contactFormValidations();
+      })
+      function contactFormValidations(){
+          const  form = d.querySelector(".contact-form");
+          const inputs = d.querySelectorAll(".contact-form [required]");
+          console.log(inputs)
+      //creamos la etiqueta span con sus caracteristicas
+          inputs.forEach(input =>{
+              const span = d.createElement('span');
+              span.id = input.name;
+              span.textContent = input.title;
+              span.classList.add('contact-form-error', 'none');
+              input.insertAdjacentElement("afterend", span);
+      })
+      // delegacion de eventos
+      d.addEventListener("keyup", (e) => {
+          if(e.target.matches(".contact-form [required]")){
+          // para no escribir e.target
+            let input = e.target;
+            pattern = input.pattern || input.dataset.pattern;
+            console.log(input, pattern)
+            if (pattern && input.value !== ""){
+                let regex = new RegExp(pattern);
+                return !regex.exec(input.value)
+                ?d.getElementById(input.name).classList.add('is-active')
+                :d.getElementById(input.name).classList.remove('is-active');
+            }
+            if (!pattern){
+                return !input.value === ""
+                ?d.getElementById(input.name).classList.add('is-active')
+                :d.getElementById(input.name).classList.remove('is-active');
+            }
+          }
+      })
+      d.addEventListener("submit", (e) =>{
+          e.preventDefault();
+          // alert("enviando formulario");
+          const loader = d.querySelector('.contact-form-loader'),
+          response = d.querySelector('.contact-form-response');
+          loader.classList.remove('none');
+          fetch("https://formsubmit.co/ajax/solpascual.16@gmail.com" , {
+          method:"POST",
+          body: new FormData(e.target)})
+          .then(res => res.ok ? res.json(): Promise.reject(res))
+          .then(json =>{
+          console.log(json)
+          loader.classList.add('none');
+          response.innerHTML = `<h1>${json.message}</h1>`;
+          response.classList.remove('none');
+          form.reset()
+          })
+          .catch(err =>{
+          console.log(err);
+          let message = err.statusText || "Ocurrio un error al enviar. Intentalo nuevamente";
+          response.innerHTML = `<h1>Error ${err.status}: ${message}</h1>`
+          })
+
+          .finally(()=> {setTimeout(() =>{
+          response.classList.add('none');
+          response.innerHTML = "";
+          },3000)});
+      });
+    }
+    </script>
   </body>
 </html>
